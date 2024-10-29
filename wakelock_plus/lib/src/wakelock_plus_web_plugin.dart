@@ -14,10 +14,10 @@ class WakelockPlusWebPlugin extends WakelockPlusPlatformInterface {
   /// Registers [WakelockPlusWebPlugin] as the default instance of the
   /// [WakelockPlatformInterface].
   static void registerWith(Registrar registrar) {
-    // Import a version of `NoSleep.js` that was adjusted for the wakelock
-    // plugin.
-    _jsLoaded = importJsLibrary(
-        url: 'assets/no_sleep.js', flutterPluginName: 'wakelock_plus');
+    // // Import a version of `NoSleep.js` that was adjusted for the wakelock
+    // // plugin.
+    // _jsLoaded = importJsLibrary(
+    //     url: 'assets/no_sleep.js', flutterPluginName: 'wakelock_plus');
 
     WakelockPlusPlatformInterface.instance = WakelockPlusWebPlugin();
   }
@@ -40,16 +40,16 @@ class WakelockPlusWebPlugin extends WakelockPlusPlatformInterface {
 
     final completer = Completer<bool>();
 
-    wakelock_plus_web.enabled().toDart.then(
-      // onResolve
-      (value) {
-        completer.complete(value.toDart);
-      },
-      // onReject
-      onError: (error) {
-        completer.completeError(error);
-      },
-    );
+    // wakelock_plus_web.enabled().toDart.then(
+    //   // onResolve
+    //   (value) {
+    //     // completer.complete(value.toDart);
+    //   },
+    //   // onReject
+    //   onError: (error) {
+    //     completer.completeError(error);
+    //   },
+    // );
 
     return completer.future;
   }

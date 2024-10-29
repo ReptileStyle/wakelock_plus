@@ -18,18 +18,18 @@ class WakelockPlusWindowsPlugin extends WakelockPlusPlatformInterface {
 
   @override
   Future<void> toggle({required bool enable}) async {
-    final int response;
-    if (enable) {
-      response = SetThreadExecutionState(
-          EXECUTION_STATE.ES_CONTINUOUS | EXECUTION_STATE.ES_DISPLAY_REQUIRED);
-    } else {
-      response = SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
-    }
-
-    // SetThreadExecutionState returns 0 if the operation failed.
-    if (response != 0) {
-      _enabled = enable;
-    }
+    // final int response;
+    // if (enable) {
+    //   response = SetThreadExecutionState(
+    //       EXECUTION_STATE.ES_CONTINUOUS | EXECUTION_STATE.ES_DISPLAY_REQUIRED);
+    // } else {
+    //   response = SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
+    // }
+    //
+    // // SetThreadExecutionState returns 0 if the operation failed.
+    // if (response != 0) {
+    //   _enabled = enable;
+    // }
   }
 
   @override
